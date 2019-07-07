@@ -16,8 +16,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        reactionView = ReactionView(iconNames: ["like", "dislike", "funny", "interesting", "offensive"], orientation: .horizontal, vc: self)
-        reactionView.backgroundColor = .black
+        reactionView = ReactionView(iconNames: ["like", "dislike", "funny", "interesting", "offensive"],
+                                    orientation: .vertical,
+                                    vc: self)
         
     }
     

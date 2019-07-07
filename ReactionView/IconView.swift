@@ -15,33 +15,41 @@ protocol IconViewDelegate: AnyObject {
 class IconView: UIView {
     
     private var spacing: CGFloat = 5.0
+    private var iconSize: CGFloat!
+    
+    public var iconNames = [String]()
     
     private let reactionView: UIStackView = {
         let stack = UIStackView()
         stack.spacing = 5.0
         stack.alignment = .center
         stack.distribution = .equalSpacing
-        stack.axis = .horizontal
         return stack
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupReactionView()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupReactionView() {
-        reactionView.frame = CGRect(x: spacing, y: 0, width: frame.width - (spacing * 2), height: frame.height)
+    public func setupReactionView(_ orientation: NSLayoutConstraint.Axis = .horizontal) {
+        if orientation == .vertical {
+            reactionView.frame = CGRect(x: 0, y: spacing, width: frame.width, height: frame.height - (spacing * 2))
+            iconSize = (frame.height / CGFloat(iconNames.count)) - (spacing * 2)
+        } else {
+            reactionView.frame = CGRect(x: spacing, y: 0, width: frame.width - (spacing * 2), height: frame.height)
+            iconSize = (frame.width / CGFloat(iconNames.count)) - (spacing * 2)
+        }
+        
+        reactionView.axis = orientation
         addSubview(reactionView)
+        setIcons()
     }
     
-    public func setIcons(_ iconNames: [String]) {
-        let iconSize = (frame.width / CGFloat(iconNames.count)) - (spacing * 2)
-        print(iconSize)
+    private func setIcons() {
         iconNames.forEach { (item) in
             let button = UIButton()
             button.translatesAutoresizingMaskIntoConstraints = false
@@ -50,7 +58,5 @@ class IconView: UIView {
             button.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
             reactionView.addArrangedSubview(button)
         }
-        
-        
     }
 }
