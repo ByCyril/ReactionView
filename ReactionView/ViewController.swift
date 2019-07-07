@@ -8,13 +8,23 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ReactionViewDelegate {
 
+    private var reactionView: ReactionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .white
+        
+        reactionView = ReactionView(iconNames: ["like", "dislike", "offensive"], orientation: .vertical, vc: self)
+        reactionView.delegate = self
+        
     }
-
-
+    
+    func selectedIcon(_ index: Int?) {
+        if let index = index {
+            print("Selected", index)
+        }
+    }
 }
 
