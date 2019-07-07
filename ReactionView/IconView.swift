@@ -6,11 +6,7 @@
 //  Copyright © 2019 Cyril Garcia. All rights reserved.
 //
 
-import UIKit
-
-protocol IconViewDelegate: AnyObject {
-    func selectedIcon(_ index: Int)
-}
+import UIKit 
 
 class IconView: UIView {
     
@@ -50,13 +46,22 @@ class IconView: UIView {
     }
     
     private func setIcons() {
-        iconNames.forEach { (item) in
+        for (i, name) in iconNames.enumerated() {
             let button = UIButton()
             button.translatesAutoresizingMaskIntoConstraints = false
-            button.setImage(UIImage(named: item), for: .normal)
+            button.setImage(UIImage(named: name), for: .normal)
+            button.tag = i
             button.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
             button.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
             reactionView.addArrangedSubview(button)
         }
+    }
+    
+    public func hoveredElement(point: CGPoint) -> UIView? {
+        return reactionView.hitTest(point, with: nil)
+    }
+    
+    public func getElements() -> [UIView]? {
+        return reactionView.subviews
     }
 }

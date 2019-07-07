@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ReactionViewDelegate {
 
     private var reactionView: ReactionView!
     
@@ -16,14 +16,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        reactionView = ReactionView(iconNames: ["like", "dislike", "funny", "interesting", "offensive"],
-                                    orientation: .vertical,
-                                    vc: self)
+        reactionView = ReactionView(iconNames: ["like", "dislike", "offensive"], orientation: .vertical, vc: self)
+        reactionView.delegate = self
         
     }
     
-    
-    
-    
+    func selectedIcon(_ index: Int?) {
+        if let index = index {
+            print("Selected", index)
+        }
+    }
 }
 
