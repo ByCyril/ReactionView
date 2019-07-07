@@ -8,63 +8,49 @@
 
 import UIKit
 
+protocol IconViewDelegate: AnyObject {
+    func selectedIcon(_ index: Int)
+}
+
 class IconView: UIView {
     
-    private let iconStackView = UIStackView()
-
-    public var stackSpacing: CGFloat = 5
-    public var stackAxis: NSLayoutConstraint.Axis = .horizontal
-    public var stackDistribution: UIStackView.Distribution = .equalSpacing
-    public var stackAlignment: UIStackView.Alignment = .center
+    private var spacing: CGFloat = 5.0
     
-    private var iconNamesArray = ["like", "dislike", "funny", "interesting", "offensive"]
+    private let reactionView: UIStackView = {
+        let stack = UIStackView()
+        stack.spacing = 5.0
+        stack.alignment = .center
+        stack.distribution = .equalSpacing
+        stack.axis = .horizontal
+        return stack
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-    }
-    
-    init(iconNamesArray: [String], frame: CGRect) {
-        super.init(frame: frame)
-        self.iconNamesArray = iconNamesArray
-        iconStackViewSetup()
-        setup()
+        setupReactionView()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("Error")
+        fatalError("init(coder:) has not been implemented")
     }
     
-    private func iconStackViewSetup() {
-        let width = frame.size.width
-        let height = frame.size.height
-        
-        iconStackView.frame = CGRect(x: 0, y: 0, width: width, height: height)
-        iconStackView.distribution = stackDistribution
-        iconStackView.alignment = stackAlignment
-        iconStackView.spacing = stackSpacing
-        addSubview(iconStackView)
+    private func setupReactionView() {
+        reactionView.frame = CGRect(x: spacing, y: 0, width: frame.width - (spacing * 2), height: frame.height)
+        addSubview(reactionView)
     }
     
-    public func setIconNamesArray(_ iconNamesArray: [String]) {
-        if iconNamesArray.count < 6 {
-            self.iconNamesArray = iconNamesArray
-        } else {
-            fatalError("Max 5 icons")
-        }
-    }
-    
-    public func setup() {
-  
-        let iconSize = (frame.size.width / CGFloat(iconNamesArray.count)) - 5
-        
-        iconNamesArray.forEach { (image) in
+    public func setIcons(_ iconNames: [String]) {
+        let iconSize = (frame.width / CGFloat(iconNames.count)) - (spacing * 2)
+        print(iconSize)
+        iconNames.forEach { (item) in
             let button = UIButton()
-            button.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
+            button.translatesAutoresizingMaskIntoConstraints = false
+            button.setImage(UIImage(named: item), for: .normal)
             button.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
-            button.setImage(UIImage(named: image)!, for: .normal)
-            iconStackView.addArrangedSubview(button)
+            button.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
+            reactionView.addArrangedSubview(button)
         }
         
+        
     }
-    
 }

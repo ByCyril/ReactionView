@@ -10,11 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    private var reactionView: ReactionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        
+        reactionView = ReactionView(iconNames: ["like", "dislike", "funny", "interesting", "offensive"], orientation: .horizontal, vc: self)
+        reactionView.backgroundColor = .black
+        
     }
-
-
+    
+    
+    
+    
 }
 
