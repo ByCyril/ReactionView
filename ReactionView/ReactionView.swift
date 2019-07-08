@@ -59,6 +59,7 @@ class ReactionView: IconView {
         if gesture.state == .began {
             animateIn(centerLocation)
         } else if gesture.state == .ended {
+            delegate?.selectedIcon(selectedIndex)
             animateOut()
         } else if gesture.state == .changed {
             selecting(gesture, centerLocation)
@@ -73,25 +74,30 @@ class ReactionView: IconView {
         let element = self.hoveredElement(point: position)
         
         if element is UIButton {
+            
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+                
                 self.getElements()?.forEach({ (button) in
                     button.transform = .identity
                 })
                 self.selectedIndex = element!.tag
                 
                 if self.orientation == .horizontal {
+                    
                     if centerLocation.y > (viewHeight * 0.15) {
                         element?.transform = CGAffineTransform(translationX: 0, y: -50)
                     } else {
                         element?.transform = CGAffineTransform(translationX: 0, y: 50)
                     }
+                    
                 } else if self.orientation == .vertical {
-                    print(centerLocation.x, viewWidth * 0.05, viewWidth / 2)
+                    
                     if centerLocation.x > viewWidth * 0.05 && centerLocation.x < viewWidth / 2 {
                         element?.transform = CGAffineTransform(translationX: 50, y: 0)
                     } else if centerLocation.x > viewWidth / 2 && centerLocation.x < viewWidth * 0.95 {
                         element?.transform = CGAffineTransform(translationX: -50, y: 0)
                     }
+                    
                 }
                 
             })
@@ -102,7 +108,6 @@ class ReactionView: IconView {
         self.getElements()?.forEach({ (button) in
             button.transform = .identity
         })
-        delegate?.selectedIcon(selectedIndex)
     }
     
     private func animateIn(_ location: CGPoint) {
