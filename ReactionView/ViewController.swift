@@ -8,23 +8,50 @@
 
 import UIKit
 
-class ViewController: UIViewController, ReactionViewDelegate {
+class ViewController: UIViewController, ReactiveViewDelegate {
 
-    private var reactionView: ReactionView!
+    private var reactiveView: ReactiveView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        reactionView = ReactionView(iconNames: ["like", "dislike", "offensive"], orientation: .horizontal, vc: self)
-        reactionView.delegate = self
+        reactiveView = ReactiveView(target: self,
+                                    iconNames: ["like", "dislike", "funny", "interesting", "offensive"],
+                                    orientation: .horizontal,
+                                    iconSquareSize: 50)
         
+//        reactiveView.delegate = self
+    
+        let selectors = [#selector(ViewController.likeSelected),
+                         #selector(ViewController.dislikeSelected),
+                         #selector(ViewController.madSelected)]
+        
+        reactiveView.addActions(self, selectors: selectors)
+        reactiveView.present(event: .longPress)
+
     }
     
-    func selectedIcon(_ index: Int?) {
-        if let index = index {
-            print("Selected", index)
-        }
+    @objc
+    func likeSelected() {
+        print("like")
+    }
+    
+    @objc
+    func dislikeSelected() {
+        print("dislike")
+    }
+    
+    @objc
+    func madSelected() {
+        print("mad")
+    }
+    
+    func selectedIcon(_ index: Int) {
+        print("Selected", index)
+
     }
 }
 
