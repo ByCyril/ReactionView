@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0110CBE422D1C8AD00599656 /* ReactiveIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0110CBE222D1C8AD00599656 /* ReactiveIconView.swift */; };
 		0110CBE522D1C8AD00599656 /* ReactiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0110CBE322D1C8AD00599656 /* ReactiveView.swift */; };
+		01319B5222D833E200D76D1F /* ReactionViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01319B5122D833E200D76D1F /* ReactionViewTests.swift */; };
 		016732F322D13EA000BD1D74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016732F222D13EA000BD1D74 /* AppDelegate.swift */; };
 		016732F522D13EA000BD1D74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016732F422D13EA000BD1D74 /* ViewController.swift */; };
 		016732FA22D13EA200BD1D74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 016732F922D13EA200BD1D74 /* Assets.xcassets */; };
@@ -16,9 +17,22 @@
 		017D545C22D8038D001FE73B /* TestingClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D545B22D8038D001FE73B /* TestingClass.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		01319B5422D833E300D76D1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 016732E722D13EA000BD1D74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 016732EE22D13EA000BD1D74;
+			remoteInfo = ReactionView;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0110CBE222D1C8AD00599656 /* ReactiveIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveIconView.swift; sourceTree = "<group>"; };
 		0110CBE322D1C8AD00599656 /* ReactiveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveView.swift; sourceTree = "<group>"; };
+		01319B4F22D833E200D76D1F /* ReactionViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactionViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		01319B5122D833E200D76D1F /* ReactionViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionViewTests.swift; sourceTree = "<group>"; };
+		01319B5322D833E300D76D1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		016732EF22D13EA000BD1D74 /* ReactionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		016732F222D13EA000BD1D74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		016732F422D13EA000BD1D74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,6 +43,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		01319B4C22D833E200D76D1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		016732EC22D13EA000BD1D74 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -39,10 +60,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01319B5022D833E200D76D1F /* ReactionViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				01319B5122D833E200D76D1F /* ReactionViewTests.swift */,
+				01319B5322D833E300D76D1F /* Info.plist */,
+			);
+			path = ReactionViewTests;
+			sourceTree = "<group>";
+		};
 		016732E622D13EA000BD1D74 = {
 			isa = PBXGroup;
 			children = (
 				016732F122D13EA000BD1D74 /* ReactionView */,
+				01319B5022D833E200D76D1F /* ReactionViewTests */,
 				016732F022D13EA000BD1D74 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				016732EF22D13EA000BD1D74 /* ReactionView.app */,
+				01319B4F22D833E200D76D1F /* ReactionViewTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,6 +105,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		01319B4E22D833E200D76D1F /* ReactionViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01319B5822D833E300D76D1F /* Build configuration list for PBXNativeTarget "ReactionViewTests" */;
+			buildPhases = (
+				01319B4B22D833E200D76D1F /* Sources */,
+				01319B4C22D833E200D76D1F /* Frameworks */,
+				01319B4D22D833E200D76D1F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01319B5522D833E300D76D1F /* PBXTargetDependency */,
+			);
+			name = ReactionViewTests;
+			productName = ReactionViewTests;
+			productReference = 01319B4F22D833E200D76D1F /* ReactionViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		016732EE22D13EA000BD1D74 /* ReactionView */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0167330122D13EA200BD1D74 /* Build configuration list for PBXNativeTarget "ReactionView" */;
@@ -100,6 +150,10 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Cyril Garcia";
 				TargetAttributes = {
+					01319B4E22D833E200D76D1F = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 016732EE22D13EA000BD1D74;
+					};
 					016732EE22D13EA000BD1D74 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
@@ -119,11 +173,19 @@
 			projectRoot = "";
 			targets = (
 				016732EE22D13EA000BD1D74 /* ReactionView */,
+				01319B4E22D833E200D76D1F /* ReactionViewTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		01319B4D22D833E200D76D1F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		016732ED22D13EA000BD1D74 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -136,6 +198,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		01319B4B22D833E200D76D1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01319B5222D833E200D76D1F /* ReactionViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		016732EB22D13EA000BD1D74 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -150,6 +220,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		01319B5522D833E300D76D1F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 016732EE22D13EA000BD1D74 /* ReactionView */;
+			targetProxy = 01319B5422D833E300D76D1F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		016732FB22D13EA200BD1D74 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -162,6 +240,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		01319B5622D833E300D76D1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R986STKYJ7;
+				INFOPLIST_FILE = ReactionViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ByCyril.ReactionViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReactionView.app/ReactionView";
+			};
+			name = Debug;
+		};
+		01319B5722D833E300D76D1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R986STKYJ7;
+				INFOPLIST_FILE = ReactionViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ByCyril.ReactionViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReactionView.app/ReactionView";
+			};
+			name = Release;
+		};
 		016732FF22D13EA200BD1D74 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -317,6 +435,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		01319B5822D833E300D76D1F /* Build configuration list for PBXNativeTarget "ReactionViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01319B5622D833E300D76D1F /* Debug */,
+				01319B5722D833E300D76D1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		016732EA22D13EA000BD1D74 /* Build configuration list for PBXProject "ReactionView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
