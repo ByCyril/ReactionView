@@ -20,8 +20,7 @@ class ViewController: UIViewController, ReactiveViewDelegate {
         
         reactiveView = ReactiveView(target: self,
                                     iconNames: ["like", "dislike", "funny", "interesting", "offensive"],
-                                    orientation: .horizontal,
-                                    iconSquareSize: 50)
+                                    orientation: .horizontal)
         
 //        reactiveView.delegate = self
     

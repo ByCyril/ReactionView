@@ -164,8 +164,8 @@ class ReactiveView: ReactiveIconView {
             } else if gesture.state == .changed {
                 if self.iconAnimationSelectionStyle == .slide {
                     slideSelectionAnimation(gesture, centerLocation)
-                } else {
-                    scaledSelectionAnimation(gesture, centerLocation)
+                } else if self.iconAnimationSelectionStyle == .zoom {
+                    scaledSelectionAnimation(gesture)
                 }
                 
             }
@@ -176,7 +176,7 @@ class ReactiveView: ReactiveIconView {
         
     }
     
-    private func scaledSelectionAnimation(_ gesture: UIGestureRecognizer, _ centerLocation: CGPoint) {
+    private func scaledSelectionAnimation(_ gesture: UIGestureRecognizer) {
         let position = gesture.location(in: self)
         let highlightedIcon = self.hoveredElement(point: position)
         
@@ -217,6 +217,8 @@ class ReactiveView: ReactiveIconView {
                     self.verticalIconTransformation(location: centerLocation.x,
                                                     viewWidth: viewWidth,
                                                     element: highlightedIcon)
+                } else if self.orientation == .blossom {
+                    
                 }
             })
             
