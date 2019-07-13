@@ -12,24 +12,27 @@ class ViewController: UIViewController, ReactiveViewDelegate {
 
     private var reactiveView: ReactiveView!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
+
+//        Step 1) Instantiate
         reactiveView = ReactiveView(target: self,
-                                    iconNames: ["like", "dislike", "funny", "interesting", "offensive"],
-                                    orientation: .horizontal)
+                                    iconNames: ["like", "dislike", "offensive"],
+                                    orientation: .vertical)
         
-//        reactiveView.delegate = self
+//        Step 2) Optional - Prepare the delegate
+        reactiveView.delegate = self
     
+//        Step 3) Pass an array of actions
         let selectors = [#selector(ViewController.likeSelected),
                          #selector(ViewController.dislikeSelected),
-                         #selector(ViewController.madSelected)]
+                         #selector(ViewController.offensiveSelected)]
         
         reactiveView.addActions(self, selectors: selectors)
-        reactiveView.present(event: .longPress)
+        
+//        Step 4) Specify the presentation style
+        reactiveView.presentOn(with: .longPress)
 
     }
     
@@ -44,8 +47,8 @@ class ViewController: UIViewController, ReactiveViewDelegate {
     }
     
     @objc
-    func madSelected() {
-        print("mad")
+    func offensiveSelected() {
+        print("offensive")
     }
     
     func selectedIcon(_ index: Int) {

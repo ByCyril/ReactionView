@@ -106,7 +106,7 @@ class ReactiveView: ReactiveIconView {
     /// - Parameters:
     ///   - button: UIButton?
     ///   - event: .longPress or .tap
-    public func present(_ button: UIButton? = nil, event: PresentationTrigger = .longPress) {
+    public func presentOn(_ button: UIButton? = nil, with event: PresentationTrigger = .longPress) {
         var gesture: UIGestureRecognizer!
         let action = #selector(ReactiveView.dispalyView(_:))
         
