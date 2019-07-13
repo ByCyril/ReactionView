@@ -10,9 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
-   
     var blossomView: UIView!
     var isShowing = false
+    var reactiveView: ReactiveView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +23,17 @@ class ViewController: UIViewController {
         blossomView.frame.size = CGSize(width: 50, height: 50)
         blossomIcons([.green, .yellow, .red, .blue, .magenta, .brown])
 
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(flow))
-//        self.view.addGestureRecognizer(tapGesture)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(flow))
+        self.view.addGestureRecognizer(tapGesture)
 
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(flow))
         self.view.addGestureRecognizer(longPressGesture)
+    
+    }
+    
+    @objc
+    func showStuff() {
+        
     }
     
     func blossomIcons(_ iconNames: [UIColor]) {
@@ -81,6 +87,25 @@ class ViewController: UIViewController {
             self.blossomView.removeFromSuperview()
         }
     }
+    
+    
+    func test() {
+        
+    }
+    
+    @objc
+    public func like() {
+        
+    }
   
+    @objc
+    public func dislike() {
+        
+    }
+    
+    @objc
+    public func funny() {
+        
+    }
 }
 

@@ -68,7 +68,7 @@ class ReactiveView: ReactiveIconView {
     typealias AnimationBlock = () -> Void
     typealias AnimationCompletionBlock = () -> Void
     
-    private weak var target: UIViewController?
+    private var target: UIViewController?
     private var actionTarget: NSObject?
     
     private(set) var isDispalyed: Bool = false
@@ -144,7 +144,7 @@ class ReactiveView: ReactiveIconView {
     
 //    private functions
     @objc
-    private func dispalyView(_ gesture: UIGestureRecognizer) {
+    public func dispalyView(_ gesture: UIGestureRecognizer) {
         guard let target = self.target else { return }
         guard let actionTarget = self.actionTarget else { return }
         
