@@ -29,6 +29,7 @@ class ReactiveIconView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
     }
     
     init(target: Any, iconNames: [String], orientation: PresentationLayout, iconSquareSize: CGFloat) {

@@ -14,6 +14,8 @@
 		016732FA22D13EA200BD1D74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 016732F922D13EA200BD1D74 /* Assets.xcassets */; };
 		016732FD22D13EA200BD1D74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 016732FB22D13EA200BD1D74 /* LaunchScreen.storyboard */; };
 		017D545C22D8038D001FE73B /* TestingClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D545B22D8038D001FE73B /* TestingClass.swift */; };
+		01D5BCCC22D9B69500D4266C /* ReactiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D5BCCB22D9B69500D4266C /* ReactiveViewController.swift */; };
+		01D5BCCE22D9B72A00D4266C /* ReactiveAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D5BCCD22D9B72A00D4266C /* ReactiveAction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		016732FC22D13EA200BD1D74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		016732FE22D13EA200BD1D74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		017D545B22D8038D001FE73B /* TestingClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingClass.swift; sourceTree = "<group>"; };
+		01D5BCCB22D9B69500D4266C /* ReactiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveViewController.swift; sourceTree = "<group>"; };
+		01D5BCCD22D9B72A00D4266C /* ReactiveAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveAction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 			children = (
 				016732F222D13EA000BD1D74 /* AppDelegate.swift */,
 				0110CBE322D1C8AD00599656 /* ReactiveView.swift */,
+				01D5BCCB22D9B69500D4266C /* ReactiveViewController.swift */,
+				01D5BCCD22D9B72A00D4266C /* ReactiveAction.swift */,
 				0110CBE222D1C8AD00599656 /* ReactiveIconView.swift */,
 				016732F422D13EA000BD1D74 /* ViewController.swift */,
 				017D545B22D8038D001FE73B /* TestingClass.swift */,
@@ -142,9 +148,11 @@
 			files = (
 				017D545C22D8038D001FE73B /* TestingClass.swift in Sources */,
 				016732F522D13EA000BD1D74 /* ViewController.swift in Sources */,
+				01D5BCCE22D9B72A00D4266C /* ReactiveAction.swift in Sources */,
 				0110CBE522D1C8AD00599656 /* ReactiveView.swift in Sources */,
 				0110CBE422D1C8AD00599656 /* ReactiveIconView.swift in Sources */,
 				016732F322D13EA000BD1D74 /* AppDelegate.swift in Sources */,
+				01D5BCCC22D9B69500D4266C /* ReactiveViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
